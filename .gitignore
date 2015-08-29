@@ -44,3 +44,7 @@ Temporary Items
 *.log
 *.log
 Aways Watching/Library/metadata/00/00000000000000009000000000000000
+Aways Watching/Library/CurrentLayout.dwlt
+Aways Watching/Library/shadercompiler-32bit-1.log
+*.log
+Aways Watching/ProjectSettings/ProjectVersion.txt
