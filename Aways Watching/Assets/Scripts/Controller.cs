@@ -6,7 +6,8 @@ public class Controller : MonoBehaviour
     public CharacterController CharacterController;
     public Camera camera;
     public float speed = 3.0f;
-    public float rotateSpeed = 3.0f;
+    public float rotateSpeed = 5.0f;
+    public int Life = 100;
 
     void Awake()
     {

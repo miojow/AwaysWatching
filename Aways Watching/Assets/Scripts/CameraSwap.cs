@@ -5,12 +5,14 @@ public class CameraSwap : MonoBehaviour {
 
     private Camera thisCam;
     public GameObject player;
+    public Controller controller;
 
     void Awake()
     {
         thisCam = gameObject.GetComponent<Camera>();
         player = GameObject.FindGameObjectWithTag("Player");
         thisCam.enabled = false;
+        controller = player.GetComponent<Controller>();
     }
 
     void Update()
@@ -20,10 +22,11 @@ public class CameraSwap : MonoBehaviour {
         Ray ray = thisCam.ScreenPointToRay(screenPos);
         if (Physics.Raycast(ray,out hit)) {
             Transform objectHit = hit.transform;
-            Debug.Log(hit.collider.name);
             if (objectHit.tag == "Player")
             {
                 thisCam.enabled = true;
+                controller.camera = thisCam;
+
             }
             else
             {
