@@ -5,12 +5,12 @@ public class CameraSwap : MonoBehaviour {
 
     private Camera thisCam;
     public GameObject player;
-    private Controller Controller;
 
     void Awake()
     {
         thisCam = gameObject.GetComponent<Camera>();
         player = GameObject.FindGameObjectWithTag("Player");
+        thisCam.enabled = false;
     }
 
     void Update()
@@ -23,15 +23,11 @@ public class CameraSwap : MonoBehaviour {
             Debug.Log(hit.collider.name);
             if (objectHit.tag == "Player")
             {
-                Debug.Log("ACHOU O PLAYER NA CAMERA: "+thisCam.transform.name);
-                Controller = objectHit.gameObject.GetComponent<Controller>();
-                if ((Controller.camera  == null) || (Controller.camera.transform.position != this.transform.position))
-                {
-                    if (Controller.camera  != null)
-                        Controller.camera.enabled = false;
-                    thisCam.enabled = true;
-                    Controller.camera = thisCam;
-                }
+                thisCam.enabled = true;
+            }
+            else
+            {
+                thisCam.enabled = false;
             }
          }
 
