@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
  [System.Serializable]
 public class Monster : MonoBehaviour {
@@ -10,17 +12,22 @@ public class Monster : MonoBehaviour {
      public int Life;
      public float Power;
      public float lookDist = 10;
-     private GameObject Player;
+     private GameObject target;
      private Controller controller;
      private Rigidbody rigdBody;
      public bool follow = false;
      private NavMeshAgent agent;
-	// Use this for initialization
+     //Variaveis de Walk
+     float posX;
+     float posY;
+     public List <Transform> Waypoints = new List<Transform>();
+
+
 	void Start () {
-        Player = GameObject.FindGameObjectWithTag("Player");
+        //target = GameObject.FindGameObjectWithTag("Player");
         rigdBody = gameObject.GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
-        rigdBody.isKinematic = true;
+        //rigdBody.isKinematic = true;
         switch(MonsterType)
         {
             case Type.Agressive:
@@ -43,29 +50,73 @@ public class Monster : MonoBehaviour {
 
     void Update()
     {
-
-        if (Vector3.Distance(transform.position, Player.transform.position) <= lookDist)
+        if (target != null)
         {
-            transform.LookAt(Player.transform.position);
-            //Se o jogador estiver ao alcance
-            if (Vector3.Distance(transform.position, Player.transform.position) <= Distance)
+            if (Vector3.Distance(transform.position, target.transform.position) <= lookDist)
             {
-                rigdBody.isKinematic = false;
-                        follow = true;
-             }
+                transform.LookAt(target.transform.position);
+                //Se o jogador estiver ao alcance
+                if (Vector3.Distance(transform.position, target.transform.position) <= Distance)
+                {
+                    rigdBody.isKinematic = false;
+                    follow = true;
+                }
+            }
+            else
+            {
+                rigdBody.isKinematic = true;
+                follow = false;
+            }
+
+
+            if (follow)
+            {
+                agent.SetDestination(target.transform.position);
+            }
         }
         else
         {
-            rigdBody.isKinematic = true;
-            follow = false;
-        }
+            Walk();
 
-
-        if (follow)
-        {
-            agent.SetDestination(Player.transform.position);
         }
 
     }
+
+    void OnTriggerEnter(Collider col)
+    {
+
+        if (col.gameObject.tag == "Patrol")
+        {
+            //Debug.Log("LOL");
+            Transform[] objects = col.GetComponentsInChildren<Transform>();
+            for (int i = 0; i < objects.Length; i++)
+            {
+                //Debug.Log(objects[i].name);
+                if (objects[i].tag == "Waypoint")
+                {
+                    Waypoints.Add(objects[i].transform);
+                }
+
+            }      
+        }
+
+    }
+
+    void Walk()
+    {
+
+        int pick = Rando
+
+    }
+
+     IEnumerator Picknumber (float time){
+
+
+         int pick = Random.Range(0, Waypoints.Count);
+        
+         posX = Waypoints.ToList<1>;
+         yield return new WaitForSeconds(time);
+     }
+
 
 }
