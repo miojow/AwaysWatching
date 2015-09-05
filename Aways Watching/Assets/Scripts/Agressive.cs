@@ -22,6 +22,7 @@ public class Agressive : MonoBehaviour {
     private bool Walking;
     private bool newPosition;
     private bool getWaypoints = true;
+    public float PlayerDistance;
     Vector3 destination;
     private List<Transform> Waypoints = new List<Transform>();
 
@@ -44,11 +45,13 @@ public class Agressive : MonoBehaviour {
             if (hit.transform.tag == "Player")
             {
                 target = hit.transform;
+                
             }
         }
 
         if (target)
         {
+            PlayerDistance = Vector3.Distance(transform.position, target.transform.position);
             Walking = false;
             if (Vector3.Distance(transform.position, target.transform.position) <= lookDist)
             {
@@ -60,8 +63,6 @@ public class Agressive : MonoBehaviour {
             }
             else
             {
-                //Jogador sai do campo de Visão (LookDist)
-                Debug.Log(Vector3.Distance(transform.position, target.transform.position));
                 follow = false;
                 target = null;
             }

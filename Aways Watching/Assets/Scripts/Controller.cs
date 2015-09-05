@@ -21,6 +21,7 @@ public class Controller : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         float curSpeed = speed * Input.GetAxis("Vertical");
         CharacterController.SimpleMove(forward * curSpeed);
+        camera.enabled = true;
     }
 }
 
