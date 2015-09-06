@@ -48,3 +48,7 @@ Aways Watching/Library/CurrentLayout.dwlt
 Aways Watching/Library/shadercompiler-32bit-1.log
 *.log
 Aways Watching/ProjectSettings/ProjectVersion.txt
+*.csproj
+Aways Watching/Assembly-CSharp-Editor-vs.csproj
+*.csproj
+*.csproj
