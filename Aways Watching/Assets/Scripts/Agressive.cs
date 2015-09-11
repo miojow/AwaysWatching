@@ -39,7 +39,6 @@ public class Agressive : MonoBehaviour {
     void Update()
     {
         RaycastHit hit;
-
         if(Physics.Raycast(transform.position, transform.forward, out hit, lookDist)){
             Debug.DrawRay(transform.position, transform.forward, Color.red);
             if (hit.transform.tag == "Player")
