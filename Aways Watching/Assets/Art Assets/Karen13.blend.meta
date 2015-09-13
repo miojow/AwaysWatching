@@ -75,7 +75,7 @@ ModelImporter:
     7400000: Default Take
     7400002: Ataque
     7400004: FindShadow
-    7400006: idol
+    7400006: Idle
     7400008: Run
     7400010: Walk
     9500000: //RootNode
@@ -99,7 +99,559 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Karen
+        weight: 1
+      - path: KarenRIg
+        weight: 1
+      - path: KarenRIg/hips
+        weight: 1
+      - path: KarenRIg/hips/spine
+        weight: 1
+      - path: KarenRIg/hips/spine/chest
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck/head
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/forearm_R_001
+        weight: 1
+      - path: KarenRIg/hips/thigh_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1/VestidoB_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1/VestidoB_R2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1/VestidoF_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1/VestidoF_R2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Ataque
+      takeName: Ataque
+      firstFrame: -1
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Karen
+        weight: 1
+      - path: KarenRIg
+        weight: 1
+      - path: KarenRIg/hips
+        weight: 1
+      - path: KarenRIg/hips/spine
+        weight: 1
+      - path: KarenRIg/hips/spine/chest
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck/head
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/forearm_R_001
+        weight: 1
+      - path: KarenRIg/hips/thigh_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1/VestidoB_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1/VestidoB_R2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1/VestidoF_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1/VestidoF_R2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FindShadow
+      takeName: FindShadow
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Karen
+        weight: 1
+      - path: KarenRIg
+        weight: 1
+      - path: KarenRIg/hips
+        weight: 1
+      - path: KarenRIg/hips/spine
+        weight: 1
+      - path: KarenRIg/hips/spine/chest
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck/head
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/forearm_R_001
+        weight: 1
+      - path: KarenRIg/hips/thigh_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1/VestidoB_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1/VestidoB_R2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1/VestidoF_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1/VestidoF_R2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: idol
+      firstFrame: -1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Karen
+        weight: 1
+      - path: KarenRIg
+        weight: 1
+      - path: KarenRIg/hips
+        weight: 1
+      - path: KarenRIg/hips/spine
+        weight: 1
+      - path: KarenRIg/hips/spine/chest
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck/head
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/forearm_R_001
+        weight: 1
+      - path: KarenRIg/hips/thigh_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1/VestidoB_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1/VestidoB_R2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1/VestidoF_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1/VestidoF_R2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: -1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Karen
+        weight: 1
+      - path: KarenRIg
+        weight: 1
+      - path: KarenRIg/hips
+        weight: 1
+      - path: KarenRIg/hips/spine
+        weight: 1
+      - path: KarenRIg/hips/spine/chest
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck/head
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/forearm_R_001
+        weight: 1
+      - path: KarenRIg/hips/thigh_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1/VestidoB_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1/VestidoB_R2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1/VestidoF_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1/VestidoF_R2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: -1
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Karen
+        weight: 1
+      - path: KarenRIg
+        weight: 1
+      - path: KarenRIg/hips
+        weight: 1
+      - path: KarenRIg/hips/spine
+        weight: 1
+      - path: KarenRIg/hips/spine/chest
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/neck/head
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_L/upper_arm_L/forearm_L/hand_L
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R
+        weight: 1
+      - path: KarenRIg/hips/spine/chest/shoulder_R/upper_arm_R/forearm_R/hand_R/forearm_R_001
+        weight: 1
+      - path: KarenRIg/hips/thigh_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_L/shin_L/foot_L/toe_L
+        weight: 1
+      - path: KarenRIg/hips/thigh_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R
+        weight: 1
+      - path: KarenRIg/hips/thigh_R/shin_R/foot_R/toe_R
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_L1/VestidoB_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoB_R1/VestidoB_R2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_L1/VestidoF_L2
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1
+        weight: 1
+      - path: KarenRIg/hips/VestidoF_R1/VestidoF_R2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

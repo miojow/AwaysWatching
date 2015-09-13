@@ -21,7 +21,6 @@ public class CameraSwap : MonoBehaviour {
         multiCam =  FindObjectsOfType(typeof(Camera)) as Camera[];
         thisCam = gameObject.GetComponent<Camera>();
         thisCam.enabled = false;
-        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>();
         thisPos = Vector3.forward;
         c = new Vector3(0.5F, 0.5F, 0);
         p = thisCam.transform.position;
@@ -36,31 +35,40 @@ public class CameraSwap : MonoBehaviour {
         //Ray botLeft = thisCam.ViewportPointToRay(new Vector3(0, 1, 0));
         float posX = 0;
         float posY = 0;
-        for (int i = 0; i < 7; i ++)
+        if (!player)
         {
-            for (int p = 0; p < 7; p ++)
+            for (int i = 0; i < 7; i++)
             {
-                ray = thisCam.ViewportPointToRay(new Vector3(posX, posY, 0));
-                Debug.DrawRay(ray.origin, ray.direction, Color.green);
-                if (Physics.Raycast(ray, out hit,10))
+                for (int p = 0; p < 7; p++)
                 {
-                    Transform objectHit = hit.transform;
-                    if (objectHit.tag == "Player")
+                    ray = thisCam.ViewportPointToRay(new Vector3(posX, posY, 0));
+                    Debug.DrawRay(ray.origin, ray.direction, Color.green);
+                    if (Physics.Raycast(ray, out hit, 10))
                     {
-                        player = objectHit.gameObject;
-                        Debug.Log(hit.distance);
-                        controller.camera = thisCam;
+                        Transform objectHit = hit.transform;
+                        if (objectHit.tag == "Player")
+                        {
+                            controller = objectHit.GetComponent<Controller>();
+                            if (controller.camera){
+                                if (controller.camera.name != thisCam.name)
+                                {
+                                    controller.camera.enabled = false;
+                                }
+                            }
+                            player = objectHit.gameObject;
+                            controller.camera = thisCam;
+                        }
+                        else
+                        {
+                            thisCam.enabled = false;
+                        }
                     }
-                    else
-                    {
-                        thisCam.enabled = false;
-                    }
-                }
 
-                posY = posY + 0.125f;
+                    posY = posY + 0.125f;
+                }
+                posY = 0;
+                posX = posX + 0.125f;
             }
-            posY = 0;
-            posX = posX + 0.125f;
         }
 
         if (player)
