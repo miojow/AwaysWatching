@@ -7,9 +7,27 @@ public class Inventory : MonoBehaviour {
     public List<Item> Items = new List<Item>();
     public GameObject slots;
     ItemDatabase database;
-    int startx = -122;
-    int starty = -20;
+    float rectX;
+    float rectY;
+    float startx = -122;
+    float starty = -20;
+    public GameObject toolTip;
+
+    public void ShowTooltip(Vector3 toolPosition,Item item)
+    {
+        toolTip.SetActive(true);
+        toolTip.GetComponent<RectTransform>().localPosition = new Vector3(toolPosition.x + 500, toolPosition.y, toolPosition.z);
+
+    }
+    public void CloseToolTip()
+    {
+        toolTip.SetActive(false);
+    }
 	void Start () {
+        rectX = gameObject.GetComponent<RectTransform>().rect.width;
+        rectY = gameObject.GetComponent<RectTransform>().rect.height;
+        startx =  rectX - 180;
+        starty = rectY - 530;
         int slotAmount = 0;
         database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
         for (int i = 1; i < 5; i++)
@@ -23,11 +41,11 @@ public class Inventory : MonoBehaviour {
                 slot.transform.parent = this.gameObject.transform;
                 slot.GetComponent<RectTransform>().localPosition = new Vector3(startx, starty, 0);
                 slot.name = "slot" + i + "." + p;
-                startx = startx + 80;
+                startx = startx + 100;
                 if (p == 4)
                 {
-                    startx = -122;
-                    starty = starty - 80;
+                    startx = -180;
+                    starty = starty - 100;
 
                 }
                 slotAmount++;
