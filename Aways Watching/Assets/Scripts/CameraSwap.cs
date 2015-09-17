@@ -14,12 +14,15 @@ public class CameraSwap : MonoBehaviour {
     private Vector3 p;
     private RaycastHit hit;
     private Ray ray;
+    public CameraController camController;
 
 
     void Awake()
     {
         multiCam =  FindObjectsOfType(typeof(Camera)) as Camera[];
         thisCam = gameObject.GetComponent<Camera>();
+        camController = GameObject.FindGameObjectWithTag("CameraController").GetComponent<CameraController>();
+
         thisCam.enabled = false;
         thisPos = Vector3.forward;
         c = new Vector3(0.5F, 0.5F, 0);
@@ -39,11 +42,19 @@ public class CameraSwap : MonoBehaviour {
         {
             for (int i = 0; i < 7; i++)
             {
+                if (player != null)
+                {
+                    break;
+                }
                 for (int p = 0; p < 7; p++)
                 {
+                    if (player != null)
+                    {
+                        break;
+                    }
                     ray = thisCam.ViewportPointToRay(new Vector3(posX, posY, 0));
                     Debug.DrawRay(ray.origin, ray.direction, Color.green);
-                    if (Physics.Raycast(ray, out hit, 10))
+                    if (Physics.Raycast(ray, out hit, 20))
                     {
                         Transform objectHit = hit.transform;
                         if (objectHit.tag == "Player")
@@ -52,15 +63,21 @@ public class CameraSwap : MonoBehaviour {
                             if (controller.camera){
                                 if (controller.camera.name != thisCam.name)
                                 {
-                                    controller.camera.enabled = false;
+                                    player = objectHit.gameObject;
+                                    if (player.GetComponent<CameraSwap>().player != null)
+                                    {
+                                        player.GetComponent<CameraSwap>().player = null;
+                                    }
+                                    controller.camera = thisCam;
+
+                                    camController.enableMyCamera(thisCam);
                                 }
                             }
-                            player = objectHit.gameObject;
-                            controller.camera = thisCam;
+
                         }
                         else
                         {
-                            thisCam.enabled = false;
+                            player = null;
                         }
                     }
 
@@ -110,7 +127,6 @@ public class CameraSwap : MonoBehaviour {
     //    //}
 
     }
-
 
 
 
