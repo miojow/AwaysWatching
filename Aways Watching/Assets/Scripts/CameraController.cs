@@ -5,8 +5,11 @@ using System.Collections.Generic;
 public class CameraController : MonoBehaviour {
     GameObject[] cam;
     public List<Camera> Cameras = new List<Camera>();
-	// Use this for initialization
+    public Controller controller;
+
+
 	void Start () {
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>();
         cam =GameObject.FindGameObjectsWithTag("Camera");
         for (int i = 0; i < cam.Length; i++)
         {
@@ -20,12 +23,25 @@ public class CameraController : MonoBehaviour {
         {
             if (c.name == camera.name)
             {
-                c.enabled = true;
+                if (controller.camera.name != c.name)
+                {
+                    if (c.GetComponent<CameraSwap>().dist <= controller.camera.GetComponent<CameraSwap>().dist)
+                    {
+                        c.enabled = true;
+                        controller.camera = c;
+                    }
+                }
             }
-            else
+            else if (c.name != camera.name)
+            {
                 c.enabled = false;
+                CameraSwap s = c.GetComponent<CameraSwap>();
+                s.resetPlayer();
+            }
         }
 
     }
+
+
 
 }

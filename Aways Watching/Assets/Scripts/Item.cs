@@ -14,6 +14,7 @@ public class Item : MonoBehaviour {
     {
         Weapon,
         Consumable,
+        Document,
         Key
     }
     public Item(string name, int id, string desc, int power, ItemType type )
@@ -24,6 +25,7 @@ public class Item : MonoBehaviour {
         itemPower = power;
         itemType = type;
         itemIcon = Resources.Load<Sprite>("" + name);
+        itemModel = Resources.Load<GameObject>("Prefab"+name);
     }
     public Item()
     {

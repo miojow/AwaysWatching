@@ -30,6 +30,7 @@ public class Inventory : MonoBehaviour {
     public void ShowOptions(Item item)
     {
         options.SetActive(true);
+        itemOptions.item = item;
     }
     public void CloseOptions()
     {
@@ -66,12 +67,9 @@ public class Inventory : MonoBehaviour {
 
             }
         }
-
-        addItem(01);
-        addItem(02);
 	}
 
-    void addItem(int id)
+    public void addItem(int id)
     {
         for (int i = 0; i < database.items.Count; i++)
         {
