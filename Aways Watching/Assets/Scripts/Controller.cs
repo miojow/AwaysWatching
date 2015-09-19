@@ -17,6 +17,7 @@ public class Controller : MonoBehaviour
     private bool canAttack;
     public Inventory inventory;
     public Transform Hand;
+    public Transform DropItem; //Criado para jogar itens no chão neste ponto
 
     void Awake()
     {
@@ -116,24 +117,6 @@ public class Controller : MonoBehaviour
             Item item = Other.GetComponent<Item>();
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //{//FOR DEBUG ONLY
-                //    if (item.itemType == Item.ItemType.Weapon)
-                //    {
-                //        Other.transform.parent = Hand.transform;
-                //        Other.transform.position = Hand.transform.position;
-                //        Other.transform.position = new Vector3(Hand.transform.position.x - 0.212f, Hand.transform.position.y - 0.184f,Hand.transform.position.z +0.002f);
-                //        Other.transform.rotation = Hand.transform.rotation;
-                //        Other.transform.rotation = Quaternion.Euler(new Vector3 (Hand.transform.rotation.x + 26484f,Hand.transform.rotation.y+ 258.399f, Hand.transform.rotation.z +60.21963f));
-                //        Collider[] cols = Other.GetComponents<Collider>();
-                //        for (int i = 0; i < cols.Length; i++)
-                //        {
-                //            if (cols[i].isTrigger == true)
-                //            {
-                //                cols[i].enabled = false;
-                //            }
-                //        }
-                //    }
-                //}
                 inventory.addItem(item.itemID);
                 Destroy(Other.gameObject);
             }

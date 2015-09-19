@@ -24,7 +24,7 @@ public class Item : MonoBehaviour {
         itemDesc = desc;
         itemPower = power;
         itemType = type;
-        itemIcon = Resources.Load<Sprite>("" + name);
+        itemIcon = Resources.Load<Sprite>("Sprite" + name);
         itemModel = Resources.Load<GameObject>("Prefab"+name);
     }
     public Item()

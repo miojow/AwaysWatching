@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class ItemOptions : MonoBehaviour {
     public Item item;
     public Inventory inventory;
+    public ItemDatabase database;
     public enum Options
     {
         Use,
@@ -16,6 +17,7 @@ public class ItemOptions : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
 	}
 
     public void CmdExit()
@@ -96,9 +98,6 @@ public class ItemOptions : MonoBehaviour {
                 GameObject weapon = Instantiate(item.itemModel, GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>().Hand.transform.position, GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>().Hand.transform.rotation) as GameObject;
                 weapon.transform.parent = controller.Hand.transform;
                 weapon.transform.position = controller.Hand.transform.position;
-                weapon.transform.position = new Vector3(controller.Hand.transform.position.x - 0.212f, controller.Hand.transform.position.y - 0.184f, controller.Hand.transform.position.z + 0.002f);
-                weapon.transform.rotation = controller.Hand.transform.rotation;
-                weapon.transform.rotation = Quaternion.Euler(new Vector3(controller.Hand.transform.rotation.x + 26484f, controller.Hand.transform.rotation.y + 258.399f, controller.Hand.transform.rotation.z + 60.21963f));
                 Collider[] cols = weapon.GetComponents<Collider>();
                 for (int i = 0; i < cols.Length; i++)
                 {
@@ -114,17 +113,17 @@ public class ItemOptions : MonoBehaviour {
             #region Release
             else if (opt == Options.Release)
             {
-                GameObject ite = item.itemModel;
-                Collider[] cols = ite.GetComponents<Collider>();
-                for (int i = 0; i < cols.Length; i++)
+                for (int i = 0; i < database.items.Count; i++)
                 {
-                    if (cols[i].enabled == false)
+                    if (database.items[i].itemID == item.itemID)
                     {
-                        cols[i].enabled = true;
+                        GameObject ite = database.items[i].itemModel;
+                        Instantiate(ite, GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>().DropItem.transform.position, GameObject.FindGameObjectWithTag("Player").transform.rotation);
+                        inventory.removeItem(item);
+                        break;
                     }
                 }
-                Instantiate(ite, GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.FindGameObjectWithTag("Player").transform.rotation);
-                inventory.removeItem(item);
+               
             }
             #endregion
         }
