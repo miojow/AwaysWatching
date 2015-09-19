@@ -94,6 +94,18 @@ public class Inventory : MonoBehaviour {
         }
     }
 
+    public void removeItem(Item item)
+    {
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].itemName == item.itemName)
+            {
+                Items.Remove(item);
+                break;
+            }
+        }
+    }
+
 
 
 }
