@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraSwap.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraZone.cs" />
+     <Compile Include="Assets\Scripts\Cenario\Door.cs" />
      <Compile Include="Assets\Scripts\HUD\GameOptions.cs" />
      <Compile Include="Assets\Scripts\HUD\IDItem.cs" />
      <Compile Include="Assets\Scripts\HUD\InfoPanel.cs" />
