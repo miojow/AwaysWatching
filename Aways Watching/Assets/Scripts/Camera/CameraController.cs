@@ -25,18 +25,13 @@ public class CameraController : MonoBehaviour {
             {
                 if (controller.camera.name != c.name)
                 {
-                    if (c.GetComponent<CameraSwap>().dist <= controller.camera.GetComponent<CameraSwap>().dist)
-                    {
-                        c.enabled = true;
-                        controller.camera = c;
-                    }
+                    c.enabled = true;
+                    controller.camera = c;
                 }
             }
             else if (c.name != camera.name)
             {
                 c.enabled = false;
-                CameraSwap s = c.GetComponent<CameraSwap>();
-                s.resetPlayer();
             }
         }
 

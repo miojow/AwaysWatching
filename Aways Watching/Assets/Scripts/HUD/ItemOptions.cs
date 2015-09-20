@@ -5,7 +5,10 @@ using System.Collections.Generic;
 public class ItemOptions : MonoBehaviour {
     public Item item;
     public Inventory inventory;
+    public GameOptions gameOptions;
     public ItemDatabase database;
+    public TextPanel textPanel;
+    public InfoPanel infoPanel;
     public enum Options
     {
         Use,
@@ -15,9 +18,13 @@ public class ItemOptions : MonoBehaviour {
     }
     public Options opt;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+        gameOptions = GameObject.FindGameObjectWithTag("Player").GetComponent<GameOptions>();
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
+        infoPanel = GameObject.FindGameObjectWithTag("InfoPanel").GetComponent<InfoPanel>();
+        textPanel = GameObject.FindGameObjectWithTag("TextPanel").GetComponent<TextPanel>();
+        this.gameObject.SetActive(false);
 	}
 
     public void CmdExit()
@@ -47,6 +54,7 @@ public class ItemOptions : MonoBehaviour {
         #region Consumables
         if (item.itemType == Item.ItemType.Consumable)
         {
+            #region Use
             if (opt == Options.Use)
             {
                 int life = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>().Life;
@@ -65,18 +73,29 @@ public class ItemOptions : MonoBehaviour {
                 }
                 else
                 {
-                    Debug.Log("Vida cheia");
+                    string text = "Minha saúde já está cheia.";
+                    gameOptions.close = true;
+                    textPanel.WriteText(text);
                 }
             }
+            #endregion
+            #region Exit
             else if (opt == Options.Exit)
             {
                 inventory.CloseOptions();
             }
+            #endregion
+            #region Release
             else if(opt == Options.Release)
             {
                 GameObject ite = item.itemModel;
                 Instantiate(ite, GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.FindGameObjectWithTag("Player").transform.rotation);
                 inventory.removeItem(item);
+            }
+            #endregion
+            else if (opt == Options.Info)
+            {
+                infoPanel.WriteText(item.itemDesc);
             }
         }
 
@@ -95,19 +114,28 @@ public class ItemOptions : MonoBehaviour {
             if (opt == Options.Use)
             {
                 Controller controller = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>();
-                GameObject weapon = Instantiate(item.itemModel, GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>().Hand.transform.position, GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>().Hand.transform.rotation) as GameObject;
-                weapon.transform.parent = controller.Hand.transform;
-                weapon.transform.position = controller.Hand.transform.position;
-                Collider[] cols = weapon.GetComponents<Collider>();
-                for (int i = 0; i < cols.Length; i++)
+                if (controller.Weapon)
                 {
-                    if (cols[i].isTrigger == true)
-                    {
-                        cols[i].enabled = false;
-                    }
+                    string text = "Você já possui uma arma equipada.";
+                    gameOptions.close = true;
+                    textPanel.WriteText(text);
                 }
-                Destroy(weapon.GetComponent<Rigidbody>());
-                inventory.removeItem(item);
+                else
+                {
+                    GameObject weapon = Instantiate(item.itemModel, GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>().Hand.transform.position, GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>().Hand.transform.rotation) as GameObject;
+                    weapon.transform.parent = controller.Hand.transform;
+                    weapon.transform.position = controller.Hand.transform.position;
+                    Collider[] cols = weapon.GetComponents<Collider>();
+                    for (int i = 0; i < cols.Length; i++)
+                    {
+                        if (cols[i].isTrigger == true)
+                        {
+                            cols[i].enabled = false;
+                        }
+                    }
+                    Destroy(weapon.GetComponent<Rigidbody>());
+                    inventory.removeItem(item);
+                }
             }
             #endregion
             #region Release
@@ -124,6 +152,12 @@ public class ItemOptions : MonoBehaviour {
                     }
                 }
                
+            }
+            #endregion
+            #region Info
+            if (opt == Options.Info)
+            {
+                infoPanel.WriteText(item.itemDesc);
             }
             #endregion
         }

@@ -5,14 +5,9 @@ using System.Linq;
 
 
 public class Agressive : MonoBehaviour {
-    [Tooltip ("Distancia para seguir Player")]
-    public float Distance;
-    [Tooltip("Distancia para Enxergar Player")]
-    public float lookDist = 10;
-    public int Life;
-    public float Power;
     private Transform target;
     private Rigidbody rigdBody;
+    private Monster monster;
     public bool follow = false;
     private NavMeshAgent agent;
     //Variaveis de Walk
@@ -28,6 +23,7 @@ public class Agressive : MonoBehaviour {
 
 
 	void Start () {
+        monster = gameObject.GetComponent<Monster>();
         rigdBody = gameObject.GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
 
@@ -39,7 +35,8 @@ public class Agressive : MonoBehaviour {
     void Update()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, transform.forward, out hit, lookDist)){
+        if (Physics.Raycast(transform.position, transform.forward, out hit, monster.lookDist))
+        {
             Debug.DrawRay(transform.position, transform.forward, Color.red);
             if (hit.transform.tag == "Player")
             {
@@ -52,10 +49,10 @@ public class Agressive : MonoBehaviour {
         {
             PlayerDistance = Vector3.Distance(transform.position, target.transform.position);
             Walking = false;
-            if (Vector3.Distance(transform.position, target.transform.position) <= lookDist)
+            if (Vector3.Distance(transform.position, target.transform.position) <= monster.lookDist)
             {
                 //Se o jogador estiver ao alcance
-                if (Vector3.Distance(transform.position, target.transform.position) <= Distance)
+                if (Vector3.Distance(transform.position, target.transform.position) <= monster.Distance)
                 {
                     follow = true;
                 }
@@ -67,9 +64,21 @@ public class Agressive : MonoBehaviour {
             }
 
 
-            if (follow)
+            if (follow && !monster.stun && !monster.coolDown)
             {
-                agent.SetDestination(target.transform.position);
+                if (agent.hasPath)
+                {
+                    agent.Resume();
+                }
+                else
+                {
+                    agent.SetDestination(target.transform.position);
+                }
+
+            }
+            else if(monster.stun || monster.coolDown)
+            {
+                agent.Stop();
             }
         }
         else

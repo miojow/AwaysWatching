@@ -71,18 +71,23 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Agressive.cs" />
-    <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\CameraSwap.cs" />
-    <Compile Include="Assets\Scripts\Controller.cs" />
-    <Compile Include="Assets\Scripts\GameOptions.cs" />
-    <Compile Include="Assets\Scripts\IDItem.cs" />
-    <Compile Include="Assets\Scripts\Inventory.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
-    <Compile Include="Assets\Scripts\ItemDatabase.cs" />
-    <Compile Include="Assets\Scripts\ItemOptions.cs" />
-    <Compile Include="Assets\Scripts\Passive.cs" />
-    <Compile Include="Assets\Scripts\SlotScript.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraSwap.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraZone.cs" />
+    <Compile Include="Assets\Scripts\HUD\GameOptions.cs" />
+    <Compile Include="Assets\Scripts\HUD\IDItem.cs" />
+    <Compile Include="Assets\Scripts\HUD\InfoPanel.cs" />
+    <Compile Include="Assets\Scripts\HUD\Inventory.cs" />
+    <Compile Include="Assets\Scripts\HUD\Item.cs" />
+    <Compile Include="Assets\Scripts\HUD\ItemDatabase.cs" />
+    <Compile Include="Assets\Scripts\HUD\ItemOptions.cs" />
+    <Compile Include="Assets\Scripts\HUD\SlotScript.cs" />
+    <Compile Include="Assets\Scripts\HUD\TextPanel.cs" />
+    <Compile Include="Assets\Scripts\Monsters\Agressive.cs" />
+    <Compile Include="Assets\Scripts\Monsters\Monster.cs" />
+    <Compile Include="Assets\Scripts\Monsters\Passive.cs" />
+    <Compile Include="Assets\Scripts\Player\Controller.cs" />
+    <Compile Include="Assets\Scripts\Player\WeaponCollision.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />

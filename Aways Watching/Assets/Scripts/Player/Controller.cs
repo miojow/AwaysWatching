@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class Controller : MonoBehaviour
@@ -13,8 +15,8 @@ public class Controller : MonoBehaviour
     public float runSpeed;
     public int Life = 100;
     private Animator animator;
-    private bool Weapon;
-    private bool canAttack;
+    public bool Weapon;
+    public bool canAttack;
     public Inventory inventory;
     public Transform Hand;
     public Transform DropItem; //Criado para jogar itens no chão neste ponto
@@ -27,6 +29,7 @@ public class Controller : MonoBehaviour
         canAttack = true;
         Weapon = true;
     }
+    
 
     void Update()
     {
@@ -60,16 +63,21 @@ public class Controller : MonoBehaviour
         #endregion
 
         #region Ataque
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.timeScale>0)
         {
-            if (Weapon) // Se o personagem tiver arma
+            if (EventSystem.current.currentSelectedGameObject == null) // Se não estiver clicando em um botão da GUI
             {
-                if (canAttack)// Se tiver fora do CoolDown
+                if (Weapon) // Se o personagem tiver arma
                 {
-                    
-                    StartCoroutine(Attack(0.41f)); //Tempo da animação
+                    if (canAttack)// Se tiver fora do CoolDown
+                    {
+
+                        StartCoroutine(Attack(0.61f)); //Tempo da animação
+                    }
                 }
+                //}
             }
+
         }
 
 
@@ -113,13 +121,21 @@ public class Controller : MonoBehaviour
     {
         if (Other.tag == "Item")
         {
-            Debug.Log("TEM UM ITEM AQUI");
             Item item = Other.GetComponent<Item>();
             if (Input.GetKeyDown(KeyCode.E))
             {
                 inventory.addItem(item.itemID);
                 Destroy(Other.gameObject);
             }
+        }
+    }
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.transform.tag == "Monster")
+        {
+            hit.gameObject.GetComponent<Monster>().coolDown = true;
+            transform.position = Vector3.Lerp(transform.position, transform.position + transform.TransformDirection(Vector3.back), 2f);
         }
     }
 }
