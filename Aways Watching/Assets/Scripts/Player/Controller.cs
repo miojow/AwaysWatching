@@ -19,7 +19,6 @@ public class Controller : MonoBehaviour
     public bool canAttack;
     public Inventory inventory;
     public Transform Hand;
-    public int Key = 0;
     public Transform DropItem; //Criado para jogar itens no chão neste ponto
 
     void Awake()
@@ -116,18 +115,6 @@ public class Controller : MonoBehaviour
         yield return new WaitForSeconds(time);
         animator.SetBool("Attack", false);
         canAttack = true;
-    }
-
-    IEnumerator SendKey(int newKey)
-    {
-        Key = newKey;
-        yield return new WaitForSeconds(1f);
-        Key = 0;
-    }
-
-    public void UseKey(int newKey)
-    {
-        StartCoroutine(SendKey(newKey));
     }
 
     public void OnTriggerStay(Collider Other)

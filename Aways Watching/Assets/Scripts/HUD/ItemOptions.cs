@@ -93,12 +93,10 @@ public class ItemOptions : MonoBehaviour {
                 inventory.removeItem(item);
             }
             #endregion
-            #region Info
             else if (opt == Options.Info)
             {
                 infoPanel.WriteText(item.itemDesc);
             }
-            #endregion
         }
 
         #endregion
@@ -165,38 +163,5 @@ public class ItemOptions : MonoBehaviour {
         }
         #endregion
 
-        #region Keys
-       if(item.itemType == Item.ItemType.Key)
-       {
-            #region Use
-            if (opt == Options.Use)
-            {
-                Controller c = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>();
-                c.UseKey(item.itemID);
-                inventory.CloseOptions();
-            }
-            #endregion
-            #region Exit
-            else if (opt == Options.Exit)
-            {
-                inventory.CloseOptions();
-            }
-            #endregion
-            #region Release
-            else if(opt == Options.Release)
-            {
-                GameObject ite = item.itemModel;
-                Instantiate(ite, GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.FindGameObjectWithTag("Player").transform.rotation);
-                inventory.removeItem(item);
-            }
-            #endregion
-            #region Info
-            else if (opt == Options.Info)
-            {
-                infoPanel.WriteText(item.itemDesc);
-            }
-            #endregion
-        }
-        #endregion
     }
 }
