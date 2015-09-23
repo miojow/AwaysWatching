@@ -137,6 +137,7 @@ public class ItemOptions : MonoBehaviour {
                     }
                     Destroy(weapon.GetComponent<Rigidbody>());
                     inventory.removeItem(item);
+                    controller.Weapon = true;
                 }
             }
             #endregion
@@ -174,6 +175,11 @@ public class ItemOptions : MonoBehaviour {
                 Controller c = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>();
                 c.UseKey(item.itemID);
                 inventory.CloseOptions();
+                gameOptions.close = true;
+                if (c.TriggerName == "")
+                {
+                    textPanel.WriteText("Nada acontece.");
+                }
             }
             #endregion
             #region Exit

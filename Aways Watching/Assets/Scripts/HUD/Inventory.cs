@@ -13,18 +13,6 @@ public class Inventory : MonoBehaviour {
     float rectY;
     float startx = -122;
     float starty = -20;
-    //public GameObject toolTip;
-
-    //public void ShowTooltip(Vector3 toolPosition,Item item)
-    //{
-    //    toolTip.SetActive(true);
-    //    toolTip.GetComponent<RectTransform>().localPosition = new Vector3(toolPosition.x + 500, toolPosition.y, toolPosition.z);
-
-    //}
-    //public void CloseToolTip()
-    //{
-    //    toolTip.SetActive(false);
-    //}
 
 
     public void ShowOptions(Item item)
@@ -67,6 +55,7 @@ public class Inventory : MonoBehaviour {
 
             }
         }
+        
 	}
 
     public void addItem(int id)
@@ -89,6 +78,7 @@ public class Inventory : MonoBehaviour {
             if (Items[i].itemName == null)
             {
                 Items[i] = item;
+                Debug.Log(Items.Count);
                 break;
             }
         }
@@ -98,14 +88,16 @@ public class Inventory : MonoBehaviour {
     {
         for (int i = 0; i < Items.Count; i++)
         {
-            if (Items[i].itemName == item.itemName)
+            if (Items[i].Equals(item.itemName))
             {
-                Items.Remove(item);
+                Items.RemoveAt(i);
+                Items.Add(new Item());//Adicionando um item Vazio
                 break;
             }
         }
     }
 
-
-
 }
+
+
+

@@ -11,15 +11,23 @@ public class Controller : MonoBehaviour
     public float rotateSpeed = 5.0f;
     public float stamina =100;
     float curSpeed;
+     [HideInInspector]
     public bool Running;
     public float runSpeed;
     public int Life = 100;
     private Animator animator;
+     [HideInInspector]
     public bool Weapon;
+     [HideInInspector]
     public bool canAttack;
+    [HideInInspector]
     public Inventory inventory;
     public Transform Hand;
+     [HideInInspector]
     public int Key = 0;
+
+    public string TriggerName;
+
     public Transform DropItem; //Criado para jogar itens no chão neste ponto
 
     void Awake()
@@ -28,7 +36,6 @@ public class Controller : MonoBehaviour
         controller = gameObject.GetComponent("CharacterController") as CharacterController;
         animator = GetComponent<Animator>();
         canAttack = true;
-        Weapon = true;
     }
     
 
@@ -132,6 +139,7 @@ public class Controller : MonoBehaviour
 
     public void OnTriggerStay(Collider Other)
     {
+        
         if (Other.tag == "Item")
         {
             Item item = Other.GetComponent<Item>();

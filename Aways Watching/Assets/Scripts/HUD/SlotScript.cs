@@ -30,6 +30,7 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler{
             itemImage.enabled = false;
         }
 
+
     }
 
     public void OnPointerDown(PointerEventData data)
