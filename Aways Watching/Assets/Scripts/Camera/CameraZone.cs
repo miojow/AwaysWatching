@@ -4,7 +4,8 @@ using System.Collections;
 public class CameraZone : MonoBehaviour {
 
     private CameraController cameraController;
-    private Camera thisCam;
+    public Camera thisCam;
+    public Camera RedCam;
     public Transform Player;
     private Quaternion myRotation;
     private Vector3 myPosition;
@@ -22,10 +23,13 @@ public class CameraZone : MonoBehaviour {
         if (thisCam.enabled == true)
         {
             thisCam.transform.LookAt(Player.transform.position);
+            RedCam.enabled = true;
         }
         else
         {
             thisCam.transform.LookAt(null);
+            RedCam.enabled = false;
+            
         }
     }
 
