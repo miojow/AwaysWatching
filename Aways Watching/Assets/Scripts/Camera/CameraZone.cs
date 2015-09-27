@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraZone : MonoBehaviour {
 
-    private CameraController cameraController;
+    public CameraController cameraController;
     public Camera thisCam;
     public Camera RedCam;
     public Transform Player;

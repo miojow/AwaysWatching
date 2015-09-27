@@ -30,12 +30,11 @@ public class CameraController : MonoBehaviour {
         {
             if (c.name == camera.name)
             {
-                if (controller.camera.name != c.name)
+                if(controller.camera == null || controller.camera.name != c.name)
                 {
                     c.enabled = true;
                     controller.camera = c;
                 }
-
             }
             else if (c.name != camera.name)
             {
